@@ -53,17 +53,25 @@ dock_site/
 
 ##  Key Concepts Explained
 
-###  Login Logic (HTML + JavaScript)
+### A sprinkle of JS in the Project
 
-- Uses a **hidden checkbox (`#unlock`)** to toggle between login and desktop.
-    
-- Password logic is controlled inline with `onsubmit="..."`.
-    
-- On correct password, JS sets `#unlock.checked = true`, which hides the login screen.
-    
-- On incorrect attempts, adds `.shake` class and shows `.hint`
-    
-- Uses `void box.offsetWidth` to **restart the animation** if needed
+This project uses a little JS in two specific places to add extra interactivity:
+
+#### 1. Login Form
+Inline JavaScript is used inside the `<form>`'s `onsubmit` attribute to:
+
+- Prevent the page from reloading
+- Check if the entered password matches `"milesmorales"`
+- If correct → sets the `#unlock` checkbox to `checked`, which hides the login screen
+- If incorrect → shows the password hint and triggers the `.shake` animation
+- Also uses `void box.offsetWidth` to restart the animation when needed
+
+#### 2. Contact Form (Chat Popup)
+Inline JavaScript is also used in the contact form popup:
+
+```html
+<form id="demo-form" onsubmit="event.preventDefault(); document.getElementById('thank-you').style.display = 'block';">
+```
     
 
 ### Interactivity
@@ -122,7 +130,7 @@ Used throughout the UI to handle layers, popups, and persistent bars.
 
 With adjacent icons scaling to `1.2`, `1.1`, and using `:has(...)` for left-side hover symmetry.
 
-#### 🔍 Explanation of `:has()` and `+` in Dock Interactions
+#### Explanation of `:has()` and `+` in Dock Interactions
 
 - `:has()` allows targeting an element **based on its following siblings**
     
@@ -190,7 +198,7 @@ Displays a blinking block cursor just like a real terminal.
 - Used for showing chat popup, terminal, etc.
     
 
-### 🎞️Animation Summary Table
+### Animation Summary Table
 
 |Animation|Target|Purpose|
 |---|---|---|
