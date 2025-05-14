@@ -17,7 +17,9 @@ Welcome to the codebase for my Mission 01 Assignment: a fun little interactive, 
     
 -  **Pop-up app windows** (Resume, Documents, Terminal, etc.)
     
--  **Hover tooltips using CSS only** **Terminal-style blinking cursor**
+-  **Hover tooltips using CSS only**
+
+- **Terminal-style blinking cursor**
 
     
 
